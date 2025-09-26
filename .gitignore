@@ -1,0 +1,14 @@
+# Dependências e builds
+node_modules/
+dist/
+build/
+
+# Ambiente/local
+.env
+.env.local
+*.local
+
+# Sistema/Editor
+.DS_Store
+Thumbs.db
+.vscode/
