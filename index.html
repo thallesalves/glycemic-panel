@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painel Glicêmico de Treino</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Painel Glicêmico de Treino</h1>
-    <p>v0- Estrutura base criada. Em breve, formulário e lista</p>    
-</body>
+    <p>v0- Estrutura base criada. Em breve, formulário e lista</p>
+
+    <main>
+      <h2>Registrar treino</h2>
+      <form id="entry-form">
+        <fieldset>
+          <legend>Informações do treino</legend>
+
+          <label for="date">Data:</label>
+          <input type="date" name="date" id="date" required />
+
+          <label for="time">Hora:</label>
+          <input type="time" name="time" id="time" />
+
+          <label for="lastMealTime">Horário da última refeição:</label>
+          <input id="lastMealTime" name="lastMealTime" type="time" required />
+
+          <label for="lastRapidInsulinTime"
+            >Horário da última dose de insulina rápida:</label
+          >
+          <input
+            id="lastRapidInsulinTime"
+            name="lastRapidInsulinTime"
+            type="time"
+            required
+          />
+
+          <label for="type">Tipo de treino:</label>
+          <select name="type" id="type" required>
+            <option value="" selected disabled>Selecione...</option>
+            <option>Musculação</option>
+            <option>Corrida</option>
+            <option>Natação</option>
+            <option>Ciclismo</option>
+            <option>Dança</option>
+            <option>Outro</option>
+          </select>
+
+          <label for="duration">Duração prevista do treino (min):</label>
+          <input
+            type="number"
+            name="duration"
+            id="duration"
+            inputmode="numeric"
+            min="1"
+            step="1"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Glicemias (mg/dL)</legend>
+
+          <label for="pre">Antes do treino:</label>
+          <input
+            id="pre"
+            name="pre"
+            type="number"
+            inputmode="numeric"
+            min="30"
+            max="600"
+            required
+          />
+
+          <label for="during">Durante (opcional):</label>
+          <input
+            id="during"
+            name="during"
+            type="number"
+            inputmode="numeric"
+            min="30"
+            max="600"
+          />
+
+          <label for="post">Após o treino:</label>
+          <input
+            id="post"
+            name="post"
+            type="number"
+            inputmode="numeric"
+            min="30"
+            max="600"
+            required
+          />
+        </fieldset>
+
+        <label for="notes">Observações</label>
+        <textarea
+          id="notes"
+          name="notes"
+          rows="3"
+          placeholder="Refeição, insulina ativa, sensação no treino, etc."
+        ></textarea>
+
+        <button type="submit">Salvar</button>
+      </form>
+    </main>
+  </body>
 </html>
